@@ -6,4 +6,3 @@ int main() {
 	cout << "I'm learning c++";
 	return 0;
 }
- 
