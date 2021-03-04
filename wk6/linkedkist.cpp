@@ -29,19 +29,19 @@ int main (int argc, char * argv[]) {
 	// third -> next = NULL;
 
 	//Loops implement
-	node * head = NULL;
-	node * current = NULL;
+	node * head = NULL; //Head pointer
+	node * current = NULL;	//Working pointer
 	node * newNode = NULL;
 
 	current = head;
-	for (int i = 1; i <= 3; i ++) {
+	for (int i = 1; i <= 4; i ++) {
 		head = newNode;
 		newNode = new node;
 		newNode -> data = i; // Example of an int data
 		newNode -> next = NULL; // Append to the end
-		if ( i == 1) {
+		if ( i == 1) { //First node
 			head = newNode;
-		} else {
+		} else {// Update node pointer
 			current -> next = newNode;
 		}
 		current = newNode; // Current last node
@@ -53,6 +53,14 @@ int main (int argc, char * argv[]) {
 	current = head;
 	while (current != NULL) {
 		cout << current -> data << endl;
-		current = current -> next;
+		current = current -> next; //
+	}
+
+	// Delete Linked- List node, starting from the head
+	current = head;
+	while ( current != NULL) {
+		head = head -> next;
+		delete current;
+		current = head;
 	}
 }
